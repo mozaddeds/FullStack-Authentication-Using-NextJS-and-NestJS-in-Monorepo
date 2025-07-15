@@ -1,84 +1,56 @@
-# Turborepo starter
+# 🔐 FullStack Authentication Using NextJS and NestJS in Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern full-stack authentication system built using **Next.js 15** for the frontend and **NestJS 11** for the backend — organized in a monorepo setup using **Turborepo**. The project demonstrates social login (Google), JWT-based session management, secure credential handling, and scalable app architecture for production-ready apps.
 
-## Using this example
+---
 
-Run the following command:
+## ✨ Features
 
-```sh
-npx create-turbo@latest
-```
+- 🔒 Authentication with **Google OAuth** and **JWT**
+- 🧠 Built-in form validation using **Zod**
+- 🧱 Monorepo setup using **Turborepo**
+- ⚡ Backend with **NestJS**, **Prisma ORM**, and **Passport**
+- 🎨 Frontend with **Next.js App Router**, **TailwindCSS**, and **Radix UI**
+- 🧪 Unit testing with **Jest**, **Supertest**
+- 🔧 Configurable via **dotenv** and **@nestjs/config**
+- ☁️ Deployable to **Vercel** or **Netlify**
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+## 🛠️ Tech Stack
 
-### Apps and Packages
+### 🔹 Frontend (Next.js 15 – `apps/web`)
+- `next`
+- `react`, `react-dom`
+- `tailwindcss`, `postcss`, `clsx`, `tailwind-merge`, `tw-animate-css`
+- `lucide-react`, `@radix-ui/react-label`, `@radix-ui/react-slot`
+- Shared UI via `@repo/ui`
+- Linting via `eslint`, `@repo/eslint-config`, `prettier`
+- TypeScript config via `@repo/typescript-config`
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+### 🔹 Backend (NestJS 11 – `apps/backend`)
+- `@nestjs/common`, `@nestjs/core`, `@nestjs/graphql`, `@nestjs/passport`, `@nestjs/config`
+- Authentication with `passport`, `passport-local`, `passport-jwt`, `passport-google-oauth20`
+- `@prisma/client`, `argon2` for password hashing
+- `rxjs`, `graphql-tools`
+- Testing with `jest`, `supertest`, `ts-jest`, `@nestjs/testing`
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### 🔹 Shared & Tooling
+- `typescript`
+- `turbo` for monorepo orchestration
+- `eslint`, `prettier`, `@typescript-eslint` for consistent code quality
 
-### Utilities
+---
 
-This Turborepo has some additional tools already setup for you:
+## 🧬 Folder Structure (Monorepo)
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+root/
+├── apps/
+│ ├── web/ # Frontend (Next.js)
+│ └── backend/ # Backend (NestJS)
+├── packages/
+│ └── ui/ # Shared UI components (if any)
+├── .env
+├── turbo.json
+├── package.json
+└── tsconfig.json
