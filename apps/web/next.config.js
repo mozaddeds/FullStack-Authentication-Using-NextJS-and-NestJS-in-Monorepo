@@ -3,7 +3,7 @@ import next from 'next';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // or 'export' for static sites
+  output: 'export', // or 'export' for static sites
   // Other config here
 };
 
